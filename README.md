@@ -1,0 +1,1 @@
+prestashopparis_inventoryfeed
