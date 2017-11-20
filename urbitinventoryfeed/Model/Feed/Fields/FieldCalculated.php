@@ -14,7 +14,7 @@
  * @copyright 2015-2017 Urb-it SA
  * @license  http://www.gnu.org/licenses/
  */
- 
+
 require_once dirname(__FILE__) . '/FieldAbstract.php';
 require_once dirname(__FILE__) . '/Factory.php';
 
@@ -128,7 +128,7 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
             }
         }
 
-        return $taxRate;
+        return $taxRate * 100;
     }
 
     /**
@@ -140,7 +140,7 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
     {
         $useTax = $taxRate ? false : true;
         $price = Product::getPriceStatic($feedProduct->getProduct()->id, $useTax, ($feedProduct->getCombId() ? $feedProduct->getCombId() : null), 6, null, false, $useReduction);
-        $priceWithTax = ($taxRate) ? $price + ($price * ($taxRate / 100)) : $price;
+        $priceWithTax = ($taxRate) ? $price + ($price * ($taxRate / 10000)) : $price;
 
         return number_format($priceWithTax, 2, '.', '');
     }
@@ -157,16 +157,18 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
         $sp = null;
 
         Product::getPriceStatic(
-            $feedProduct->getProduct()->id, $useTax, ($feedProduct->getCombId() ? $feedProduct->getCombId() : null),
-            6, 
-            null, 
-            false, 
-            $useReduction, 
-            null, 
-            null, 
-            null, 
-            null, 
-            null, 
+            $feedProduct->getProduct()->id,
+            $useTax,
+            ($feedProduct->getCombId() ? $feedProduct->getCombId() : null),
+            6,
+            null,
+            false,
+            $useReduction,
+            null,
+            null,
+            null,
+            null,
+            null,
             $sp
         );
 
@@ -231,7 +233,7 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
             foreach ($attributeResume as $attributesSet) {
                 if ($attributesSet['id_product_attribute'] == $feedProduct->getCombId()) {
                     $productAttrs = $feedProduct->getProduct()->getAttributeCombinationsById(
-                        $attributesSet['id_product_attribute'], 
+                        $attributesSet['id_product_attribute'],
                         $context->language->id
                     );
 
@@ -304,16 +306,20 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
 
                 if (!empty($combinationImagesIds)) {
                     foreach ($combinationImagesIds as $combinationImagesId) {
-                        $additional_images[] = $feedProduct->getContext()->link->getImageLink($linkRewrite[1], 
-                            $combinationImagesId['id_image'], 
-                             ImageType::getFormattedName('large'));
+                        $additional_images[] = $feedProduct->getContext()->link->getImageLink(
+                            $linkRewrite[1],
+                            $combinationImagesId['id_image'],
+                            ImageType::getFormattedName('large')
+                        );
                     }
                 //if combination hasn't own image
                 } else {
                     $coverImageId = Product::getCover($product->id)['id_image'];
-                    $image = $feedProduct->getContext()->link->getImageLink($linkRewrite[1], 
-                        $coverImageId,  
-                        ImageType::getFormattedName('large'));
+                    $image = $feedProduct->getContext()->link->getImageLink(
+                        $linkRewrite[1],
+                        $coverImageId,
+                        ImageType::getFormattedName('large')
+                    );
                 }
             }
         //simple product
@@ -331,12 +337,20 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
 
                 $link = new Link();
 
-                $additional_image_link = 'http://' . $link->getImageLink($linkRewrite[1], $imageId,  ImageType::getFormattedName('large'));
+                $additional_image_link = 'http://' . $link->getImageLink(
+                    $linkRewrite[1],
+                    $imageId,
+                    ImageType::getFormattedName('large')
+                );
                 $additional_images[] = $additional_image_link;
             }
 
             if ($coverImageId) {
-                $image = $feedProduct->getContext()->link->getImageLink($linkRewrite[1], $coverImageId,  ImageType::getFormattedName('large'));
+                $image = $feedProduct->getContext()->link->getImageLink(
+                    $linkRewrite[1],
+                    $coverImageId,
+                    ImageType::getFormattedName('large')
+                );
             }
         }
 
@@ -489,8 +503,7 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
      */
     protected function formattedSalePriceDate($salePriceDateArray)
     {
-        if ($salePriceDateArray['from'] != '0000-00-00 00:00:00' && $salePriceDateArray['to'] != '0000-00-00 00:00:00'){
-
+        if ($salePriceDateArray['from'] != '0000-00-00 00:00:00' && $salePriceDateArray['to'] != '0000-00-00 00:00:00') {
             $tz = Configuration::get('PS_TIMEZONE');
             $dtFrom = new DateTime($salePriceDateArray['from'], new DateTimeZone($tz));
             $dtTo = new DateTime($salePriceDateArray['to'], new DateTimeZone($tz));
