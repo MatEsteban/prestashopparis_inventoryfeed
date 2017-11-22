@@ -115,6 +115,7 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
         $product = $feedProduct->getProduct();
 
         $taxCountry = Configuration::get('URBITINVENTORYFEED_TAX_COUNTRY');
+        $shopCountryId = $feedProduct->getContext()->country->id;
 
         $taxRate = null;
         $defaultCountryTax = null;
@@ -126,9 +127,14 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
             if ($rule['id_country'] == $taxCountry) {
                 $taxRate = $rule['rate'];
             }
+
+            if ($rule['id_country'] == $shopCountryId) {
+                $defaultCountryTax = $rule['rate'];
+            }
         }
 
-        return $taxRate * 100;
+        //IMS format price Urb-it
+        return $taxRate ? $taxRate * 100 : ($defaultCountryTax ? $defaultCountryTax * 100 : 0);
     }
 
     /**
