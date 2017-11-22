@@ -46,7 +46,7 @@ class Urbitinventoryfeed extends Module
     {
         $this->name = 'urbitinventoryfeed';
         $this->tab = 'administration';
-        $this->version = '1.0.1';
+        $this->version = '1.0.2';
         $this->author = 'Urbit';
         $this->need_instance = 1;
 

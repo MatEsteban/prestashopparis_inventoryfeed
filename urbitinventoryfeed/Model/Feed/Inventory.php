@@ -231,7 +231,7 @@ class UrbitInventoryfeedInventory
         // regular price
         $prices[] = array(
             'currency' => $this->_processAttributeOrByKey('URBITINVENTORYFEED_REGULAR_PRICE_CURRENCY', 'calc_Currency'),
-            'value'    => $regularPrice,
+            'value' => (float)$regularPrice * 100,
             'vat'      => $this->_processAttributeOrByKey('URBITINVENTORYFEED_REGULAR_PRICE_VAT', 'calc_TaxRate'),
             'type'     => 'regular',
         );
@@ -240,7 +240,7 @@ class UrbitInventoryfeedInventory
         if ($salePrice != $regularPrice) {
             $sPrice = array(
                 'currency' => $this->_processAttributeOrByKey('URBITINVENTORYFEED_SALE_PRICE_CURRENCY', 'calc_Currency'),
-                'value'    => $salePrice,
+                'value' => (float)$salePrice * 100,
                 'vat'      => $this->_processAttributeOrByKey('URBITINVENTORYFEED_SALE_PRICE_VAT', 'calc_TaxRate'),
                 'type'     => 'sale',
             );

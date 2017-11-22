@@ -15,7 +15,7 @@
  * @license  http://www.gnu.org/licenses/
  */
  
-include_once(_PS_MODULE_DIR_ . 'urbit_inventoryfeed' . DIRECTORY_SEPARATOR . 'Model' . DIRECTORY_SEPARATOR . 'Feed' . DIRECTORY_SEPARATOR . 'Inventory.php');
+include_once(_PS_MODULE_DIR_ . 'urbitinventoryfeed' . DIRECTORY_SEPARATOR . 'Model' . DIRECTORY_SEPARATOR . 'Feed' . DIRECTORY_SEPARATOR . 'Inventory.php');
 
 /**
  * Class Feed
@@ -79,7 +79,7 @@ class UrbitInventoryfeedFeed
             $combinations = $this->getCombinations($product['id_product']);
 
             if (empty($combinations) && $product['name'] != '') { //simple product
-                $feedInventory = new Urbit_Inventoryfeed_Inventory($product);
+                $feedInventory = new UrbitInventoryfeedInventory($product);
 
                 if ($feedInventory->process()) {
                     $inventory[] = $feedInventory->toArray();
@@ -90,7 +90,7 @@ class UrbitInventoryfeedFeed
                         continue;
                     }
 
-                    $feedInventory = new Urbit_Inventoryfeed_Inventory($product, $combId, $combination);
+                    $feedInventory = new UrbitInventoryfeedInventory($product, $combId, $combination);
 
                     if ($feedInventory->process()) {
                         $inventory[] = $feedInventory->toArray();

@@ -15,14 +15,14 @@
  * @license  http://www.gnu.org/licenses/
  */
  
-class UrbitInventoryfeedFieldsFieldAttribute extends Urbit_Inventoryfeed_Fields_FieldAbstract
+class UrbitInventoryfeedFieldsFieldAttribute extends UrbitInventoryfeedFieldsFieldAbstract
 {
     /**
      * @param UrbitInventoryfeedInventory $inventoryProduct
      * @param string $name
      * @return array
      */
-    public static function processAttribute(Urbit_Inventoryfeed_Inventory $inventoryProduct, $name)
+    public static function processAttribute(UrbitInventoryfeedInventory $inventoryProduct, $name)
     {
         $product = $inventoryProduct->getProduct();
 
