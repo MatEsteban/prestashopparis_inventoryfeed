@@ -96,24 +96,27 @@ class Urbitinventoryfeed extends Module
     }
 
     /**
-     * Load the configuration form
-     */
-    public function getContent()
-    {
-        /**
-         * If values have been submitted in the form, process.
-         */
-         $output = '';
-         $this->context->smarty->assign('active', 'intro');
-        if ((!!Tools::isSubmit('submitUrbitinventoryfeedModule')) == true) {
-            $this->postProcess();
-        }
+   * Load the configuration form
+   */
+   public function getContent()
+   {
+      /**
+       * If values have been submitted in the form, process.
+       */
+       $output = '';
+       $this->context->smarty->assign('active', 'intro');
 
-        $config = $this->renderForm();
+       if (((bool)Tools::isSubmit('submitUrbitinventoryfeedModule')) == true) {
+             $output = $this->postProcess();
+             $this->context->smarty->assign('active', 'account');
+       }
+
+       $config = $this->renderForm();
        $this->context->smarty->assign(array('config' => $config,));
 
        return  $output.$this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl');
-    }
+   }
+
 
     /**
      * Create the form that will be displayed in the configuration of your module.
