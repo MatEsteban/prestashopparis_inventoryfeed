@@ -103,15 +103,16 @@ class Urbitinventoryfeed extends Module
         /**
          * If values have been submitted in the form, process.
          */
+         $output = '';
+         $this->context->smarty->assign('active', 'intro');
         if ((!!Tools::isSubmit('submitUrbitinventoryfeedModule')) == true) {
             $this->postProcess();
         }
 
-        $this->context->smarty->assign('module_dir', $this->_path);
+        $config = $this->renderForm();
+       $this->context->smarty->assign(array('config' => $config,));
 
-        $output = $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl');
-
-        return $output . $this->renderForm();
+       return  $output.$this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl');
     }
 
     /**
