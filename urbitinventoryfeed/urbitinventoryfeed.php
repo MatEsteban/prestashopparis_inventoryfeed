@@ -40,7 +40,7 @@ class Urbitinventoryfeed extends Module
     protected $fields = array();
 
     /**
-     * Urbit_inventoryfeed constructor.
+     * Urbitinventoryfeed constructor.
      */
     public function __construct()
     {
@@ -138,8 +138,8 @@ class Urbitinventoryfeed extends Module
         $helper->token = Tools::getAdminTokenLite('AdminModules');
 
         $valueArray = $this->getConfigFormValues();
-        $valueArray['URBITINVENTORYFEED_TAGS_IDS[]'] = explode(',', Configuration::get('URBIT_INVENTORYFEED_TAGS_IDS', null));
-        $valueArray['URBITINVENTORYFEED_FILTER_CATEGORIES[]'] = explode(',', Configuration::get('URBIT_INVENTORYFEED_FILTER_CATEGORIES', null));
+        $valueArray['URBITINVENTORYFEED_TAGS_IDS[]'] = explode(',', Configuration::get('URBITINVENTORYFEED_TAGS_IDS', null));
+        $valueArray['URBITINVENTORYFEED_FILTER_CATEGORIES[]'] = explode(',', Configuration::get('URBITINVENTORYFEED_FILTER_CATEGORIES', null));
 
         $helper->tpl_vars = array(
             'fields_value' => $valueArray,
@@ -491,7 +491,7 @@ class Urbitinventoryfeed extends Module
         $form_values = $this->getConfigFormValues();
 
         foreach (array_keys($form_values) as $key) {
-            if (in_array($key, array('URBITINVENTORYFEED_TAGS_IDS', 'URBIT_INVENTORYFEED_FILTER_CATEGORIES'))) {
+            if (in_array($key, array('URBITINVENTORYFEED_TAGS_IDS', 'URBITINVENTORYFEED_FILTER_CATEGORIES'))) {
                 if ($value = Tools::getValue($key)) {
                     Configuration::updateValue($key, implode(',', $value));
                 } else {

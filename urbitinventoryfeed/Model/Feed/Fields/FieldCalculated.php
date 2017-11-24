@@ -216,12 +216,12 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
     }
 
     /**
-     * @param Urbit_Inventoryfeed_Inventory $feedProduct
+     * @param UrbitInventoryfeedInventory $feedProduct
      * @return mixed
      */
     protected function getProductDescription(UrbitInventoryfeedInventory $feedProduct)
     {
-        return $feedProduct->getProduct()->description[Context::getContext()->language->id];
+        return strip_tags($feedProduct->getProduct()->description[Context::getContext()->language->id]);
     }
 
     /**
