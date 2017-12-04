@@ -1,0 +1,7 @@
+/*
+!/urbitinventoryfeed/
+/urbitinventoryfeed/.idea/
+/urbitinventoryfeed/Json/*
+!/urbitinventoryfeed/Json/.gitkeep
+!.gitignore
+

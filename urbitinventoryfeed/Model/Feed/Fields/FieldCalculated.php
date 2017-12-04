@@ -216,7 +216,7 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
     }
 
     /**
-     * @param Urbit_Inventoryfeed_Inventory $feedProduct
+     * @param UrbitInventoryfeedInventory $feedProduct
      * @return mixed
      */
     protected function getProductDescription(UrbitInventoryfeedInventory $feedProduct)
@@ -233,8 +233,10 @@ class UrbitInventoryfeedFieldsFieldCalculated extends UrbitInventoryfeedFieldsFi
         $context = Context::getContext();
         $name = $feedProduct->getProduct()->name[$context->language->id];
 
+        $combination = $feedProduct->getCombination();
+
         // combination
-        if (!empty($feedProduct->getCombination())) {
+        if (!empty($combination)) {
             $attributeResume = $feedProduct->getProduct()->getAttributesResume($context->language->id);
             foreach ($attributeResume as $attributesSet) {
                 if ($attributesSet['id_product_attribute'] == $feedProduct->getCombId()) {
