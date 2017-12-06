@@ -19,8 +19,8 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 require_once dirname(__FILE__) . '/Model/Feed/Inventory.php';
-
 require_once dirname(__FILE__) . '/Model/Feed/Fields/Factory.php';
+require_once dirname(__FILE__) . '/Helper/UrbitHelperForm.php';
 
 /**
  * Class Urbitinventoryfeed
@@ -40,13 +40,13 @@ class Urbitinventoryfeed extends Module
     protected $fields = array();
 
     /**
-     * Urbitinventoryfeed constructor.
+     * Urbit_inventoryfeed constructor.
      */
     public function __construct()
     {
         $this->name = 'urbitinventoryfeed';
         $this->tab = 'administration';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
         $this->author = 'Urbit';
         $this->need_instance = 1;
 
@@ -96,34 +96,43 @@ class Urbitinventoryfeed extends Module
     }
 
     /**
-   * Load the configuration form
-   */
-   public function getContent()
-   {
-      /**
-       * If values have been submitted in the form, process.
-       */
-       $output = '';
-       $this->context->smarty->assign('active', 'intro');
+     * Load the configuration form
+     */
+    public function getContent()
+    {
+        /**
+         * If values have been submitted in the form, process.
+         */
+        $output = '';
+        $this->context->smarty->assign('active', 'intro');
 
-       if (((bool)Tools::isSubmit('submitUrbitinventoryfeedModule')) == true) {
-             $output = $this->postProcess();
-             $this->context->smarty->assign('active', 'account');
-       }
+        if (((bool)Tools::isSubmit('submitUrbitinventoryfeedModule')) == true) {
+            $output = $this->postProcess();
+            $this->context->smarty->assign('active', 'account');
+        }
 
-       $config = $this->renderForm();
-       $this->context->smarty->assign(array('config' => $config,));
+        $this->context->smarty->assign('module_dir', $this->_path);
 
-       return  $output.$this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl');
-   }
+        //link to controller (for ajax call)
+        $this->context->smarty->assign('controllerlink', $this->context->link->getModuleLink('urbitinventoryfeed', 'feed', array()));
 
+        $config = $this->renderForm();
+        $this->context->smarty->assign(
+            array(
+             'config' => $config,
+             'urbitinventoryfeed_img_path'  => $this->_path.'views/img/',
+             )
+        );
+
+        return $output . $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl');
+    }
 
     /**
      * Create the form that will be displayed in the configuration of your module.
      */
     protected function renderForm()
     {
-        $helper = new HelperForm();
+        $helper = new UrbitInventoryfeedUrbitHelperForm();
 
         $helper->show_toolbar = false;
         $helper->table = $this->table;
@@ -140,6 +149,8 @@ class Urbitinventoryfeed extends Module
         $valueArray = $this->getConfigFormValues();
         $valueArray['URBITINVENTORYFEED_TAGS_IDS[]'] = explode(',', Configuration::get('URBITINVENTORYFEED_TAGS_IDS', null));
         $valueArray['URBITINVENTORYFEED_FILTER_CATEGORIES[]'] = explode(',', Configuration::get('URBITINVENTORYFEED_FILTER_CATEGORIES', null));
+        $valueArray['URBITINVENTORYFEED_PRODUCT_ID_FILTER[]'] = explode(',', Configuration::get('URBITINVENTORYFEED_PRODUCT_ID_FILTER', null));
+
 
         $helper->tpl_vars = array(
             'fields_value' => $valueArray,
@@ -242,6 +253,30 @@ class Urbitinventoryfeed extends Module
     }
 
     /**
+     * @param $withNotSetted
+     * @return array
+     */
+    protected function getProductsOptions($withNotSetted = false)
+    {
+        $optionsForProductSelect = array();
+
+        if ($withNotSetted) {
+            $optionsForProductSelect[] = array(
+                'id'   => '',
+                'name' => 'Not Setted',
+            );
+        }
+
+        $products = Product::getProducts($this->context->language->id, 0, 0, 'id_product', 'ASC');
+
+        foreach ($products as $product) {
+            $optionsForProductSelect[] = array('id' => $product['id_product'], 'name' => $product['id_product'] . ' : ' . $product['name']);
+        }
+
+        return $optionsForProductSelect;
+    }
+
+    /**
      * return options for tags selects
      * @return array
      */
@@ -273,22 +308,18 @@ class Urbitinventoryfeed extends Module
                 'name' => '1 hour',
             ),
             array(
-
                 'id'   => 45,
                 'name' => '45 min',
             ),
             array(
-
                 'id'   => 30,
                 'name' => '30 min',
             ),
             array(
-
                 'id'   => 15,
                 'name' => '15 min',
             ),
             array(
-
                 'id'   => 5,
                 'name' => '5 min',
             ),
@@ -324,6 +355,7 @@ class Urbitinventoryfeed extends Module
         $optionsForTagSelect = $this->getTagsOptions();
         $optionsForCacheSelect = $this->getCacheOptions();
         $optionsForTaxes = $this->getCountriesOptions(true);
+        $optionsForProductFilter = $this->getProductsOptions(true);
 
         $fields_form = array();
 
@@ -344,6 +376,7 @@ class Urbitinventoryfeed extends Module
                         'name'  => 'name',
                     ),
                     'class'   => 'fixed-width-xxl',
+                    'hint' => $this->l('The extension uses caching system to reduce a site load and speed up the plug-in during the generation of the feed, so feed is created and saved to file at specific time intervals. The refresh interval is specified on the  \'Cache duration \' drop-down list.'),
                 ),
             ),
             'submit' => array(
@@ -362,6 +395,7 @@ class Urbitinventoryfeed extends Module
                     'type'     => 'select',
                     'label'    => $this->l('Categories'),
                     'name'     => 'URBITINVENTORYFEED_FILTER_CATEGORIES[]',
+                    'id'       => 'urbitinventoryfeed-filter-categories',
                     'multiple' => true,
                     'options'  => array(
                         'query' => $optionsForCategorySelect,
@@ -369,11 +403,14 @@ class Urbitinventoryfeed extends Module
                         'name'  => 'name',
                     ),
                     'class'    => 'fixed-width-xxl',
+                    'hint' => $this->l('Filter by Categories using this multiselect lists where you can select several options (by using Ctrl+filter\'s name).
+If there is no selected filter parameter (categories or tags or the number of products for filtering is zero), the system skips the filtering by this parameter.'),
                 ),
                 array(
                     'type'     => 'select',
                     'label'    => $this->l('Tags'),
                     'name'     => 'URBITINVENTORYFEED_TAGS_IDS[]',
+                    'id'       => 'urbitinventoryfeed-filter-tags',
                     'multiple' => true,
                     'options'  => array(
                         'query' => $optionsForTagSelect,
@@ -381,12 +418,33 @@ class Urbitinventoryfeed extends Module
                         'name'  => 'name',
                     ),
                     'class'    => 'fixed-width-xxl',
+                    'hint' =>     $this->l('Filter by Tags using this multiselect lists where you can select several options (by using Ctrl+filter\'s name).
+                     If there is no selected filter parameter (categories or tags or the number of products for filtering is zero), the system skips the filtering by this parameter.'),
+                ),
+                array(
+                    'type'  => 'text',
+                    'label' => $this->l('Minimal Stock'),
+                    'name'  => 'URBITINVENTORYFEED_MINIMAL_STOCK',
+                    'id'    => 'urbitinventoryfeed-filter-minimal-stock',
+                    'class' => 'fixed-width-xxl',
+                    'hint' => $this->l('Filter your product export by stock amount'),
+                ),
+                array(
+                    'type'    => 'urbit_product_id_filter',
+                    'label'   => $this->l('Product ID'),
+                    'name'    => 'URBITINVENTORYFEED_PRODUCT_ID_FILTER_NEW',
+                    'options' => array(
+                        'query' => $this->fields['factory']->getOptions(),
+                        'id'    => 'id',
+                        'name'  => 'name',
+                    ),
+                    'class'   => 'fixed-width-xxl',
+                    'hint' => $this->l('Select your Product ID Filter'),
                 ),
             ),
             'submit' => array(
                 'title' => $this->l('Save'),
             ),
-
         );
 
         //Taxes
@@ -407,6 +465,7 @@ class Urbitinventoryfeed extends Module
                         'name'  => 'name',
                     ),
                     'class'    => 'fixed-width-xxl',
+                    'hint' => $this->l('Select your Country in the drop down menu'),
                 ),
             ),
             'submit' => array(
@@ -417,7 +476,7 @@ class Urbitinventoryfeed extends Module
         //Inventory Dimentions
         $fields_form[3]['form'] = array(
             'legend' => array(
-                'title' => $this->l('Product Fields - Product Dimentions'),
+                'title' => $this->l('Product Fields - Product Dimensions'),
                 'icon'  => 'icon-cogs',
             ),
             'input'  => $this->fields['factory']->getInputs(),
@@ -450,17 +509,6 @@ class Urbitinventoryfeed extends Module
             ),
         );
 
-        $fields_form[6]['form'] = array(
-            'legend' => array(
-                'title' => $this->l('Custom Inventory List'),
-                'icon'  => 'icon-cogs',
-            ),
-            'input'  => $this->fields['factory']->getInventoryListInputs(),
-            'submit' => array(
-                'title' => $this->l('Save'),
-            ),
-        );
-
         return $fields_form;
     }
 
@@ -475,11 +523,12 @@ class Urbitinventoryfeed extends Module
                 'URBITINVENTORYFEED_FILTER_CATEGORIES' => explode(',', Configuration::get('URBITINVENTORYFEED_FILTER_CATEGORIES', null)),
                 'URBITINVENTORYFEED_TAGS_IDS'          => explode(',', Configuration::get('URBITINVENTORYFEED_TAGS_IDS', null)),
                 'URBITINVENTORYFEED_TAX_COUNTRY'       => Configuration::get('URBITINVENTORYFEED_TAX_COUNTRY', null),
+                'URBITINVENTORYFEED_MINIMAL_STOCK'     => Configuration::get('URBITINVENTORYFEED_MINIMAL_STOCK', null),
+                'URBITINVENTORYFEED_PRODUCT_ID_FILTER' => Configuration::get('URBITINVENTORYFEED_PRODUCT_ID_FILTER', null),
             ),
             $this->fields['factory']->getInputsConfig(),
             $this->fields['factory']->getPriceInputsConfig(),
-            $this->fields['factory']->getInventoryInputsConfig(),
-            $this->fields['factory']->getInventoryListInputsConfig()
+            $this->fields['factory']->getInventoryInputsConfig()
         );
     }
 
@@ -491,7 +540,7 @@ class Urbitinventoryfeed extends Module
         $form_values = $this->getConfigFormValues();
 
         foreach (array_keys($form_values) as $key) {
-            if (in_array($key, array('URBITINVENTORYFEED_TAGS_IDS', 'URBITINVENTORYFEED_FILTER_CATEGORIES'))) {
+            if (in_array($key, array('URBITINVENTORYFEED_TAGS_IDS', 'URBITINVENTORYFEED_FILTER_CATEGORIES', 'URBITINVENTORYFEED_PRODUCT_ID_FILTER'))) {
                 if ($value = Tools::getValue($key)) {
                     Configuration::updateValue($key, implode(',', $value));
                 } else {
@@ -501,25 +550,17 @@ class Urbitinventoryfeed extends Module
                 Configuration::updateValue($key, Tools::getValue($key));
             }
         }
-    }
+        if (Tools::getValue('URBITINVENTORYFEED_MINIMAL_STOCK') == null) {
+            $this->context->controller->errors[] = $this->l('Filter your product export by stock amount');
+        }
 
-    /**
-     * Add the CSS & JavaScript files you want to be loaded in the BO.
-     */
-    public function hookBackOfficeHeader()
-    {
-        if (Tools::getValue('module_name') == $this->name) {
-            $this->context->controller->addJS($this->_path . 'views/js/back.js');
-            $this->context->controller->addCSS($this->_path . 'views/css/back.css');
+        if (empty($this->context->controller->errors)) {
+                return $this->displayConfirmation($this->l('Settings updated'));
         }
     }
 
-    /**
-     * Add the CSS & JavaScript files you want to be added on the FO.
-     */
-    public function hookHeader()
+    public function hookDisplayBackOfficeHeader()
     {
-        $this->context->controller->addJS($this->_path . '/views/js/front.js');
-        $this->context->controller->addCSS($this->_path . '/views/css/front.css');
+        $this->context->controller->addJS($this->_path . 'views/js/multiselect.min.js');
     }
 }

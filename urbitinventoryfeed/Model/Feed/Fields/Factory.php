@@ -14,7 +14,7 @@
  * @copyright 2015-2017 Urb-it SA
  * @license  http://www.gnu.org/licenses/
  */
- 
+
 require_once dirname(__FILE__) . '/FieldCalculated.php';
 require_once dirname(__FILE__) . '/FieldAttribute.php';
 require_once dirname(__FILE__) . '/FieldDB.php';
@@ -55,16 +55,6 @@ class UrbitInventoryfeedFieldsFactory
         'URBITINVENTORYFEED_INVENTORY_QUANTITY' => 'Quantity',
     );
 
-    protected $_inventoryListInputs = array(
-        'URBITINVENTORYFEED_SCHEMA'           => 'Schema',
-        'URBITINVENTORYFEED_CONTENT_LANGUAGE' => 'Content language',
-        'URBITINVENTORYFEED_CONTENT_TYPE'     => 'Content type',
-        'URBITINVENTORYFEED_CREATED_AT'       => 'Created at',
-        'URBITINVENTORYFEED_UPDATED_AT'       => 'Updated at',
-        'URBITINVENTORYFEED_TARGET_COUNTRY'   => 'Target countries (comma separated)',
-        'URBITINVENTORYFEED_VERSION'          => 'Version',
-        'URBITINVENTORYFEED_FEED_FORMAT'      => 'Feed format - encoding',
-    );
 
     /**
      * @param $product
@@ -112,13 +102,7 @@ class UrbitInventoryfeedFieldsFactory
         return $this->_generateInputs($this->_priceInputs);
     }
 
-    /**
-     * @return array
-     */
-    public function getInventoryListInputs()
-    {
-        return $this->_generateTextInputs($this->_inventoryListInputs);
-    }
+
 
     /**
      * @return array
@@ -165,19 +149,6 @@ class UrbitInventoryfeedFieldsFactory
         return $config;
     }
 
-    /**
-     * @return array
-     */
-    public function getInventoryListInputsConfig()
-    {
-        $config = array();
-
-        foreach ($this->_inventoryListInputs as $key => $name) {
-            $config[$key] = $this->getInputConfig($key);
-        }
-
-        return $config;
-    }
 
     /**
      * @return array
