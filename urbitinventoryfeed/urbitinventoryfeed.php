@@ -561,6 +561,7 @@ If there is no selected filter parameter (categories or tags or the number of pr
 
     public function hookDisplayBackOfficeHeader()
     {
+        $this->context->controller->addJquery();
         $this->context->controller->addJS($this->_path . 'views/js/multiselect.min.js');
     }
 }
