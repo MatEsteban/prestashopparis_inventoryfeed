@@ -49,9 +49,9 @@ class UrbitInventoryfeedFeedModuleFrontController extends ModuleFrontController
         header('Content-Type: application/json');
 
         if (version_compare(_PS_VERSION_, "1.7", "<")) {
-            $this->setTemplate('feedtemp.tpl');
+           $this->setTemplate('feedtemp.tpl');
         } else {
-            $this->setTemplate('module:urbitinventoryfeed/views/templates/front/feedtemp.tpl');
+           $this->setTemplate('module:urbitinventoryfeed/views/templates/front/feedtemp.tpl');
         }
 
         if (Tools::getIsset(Tools::getValue(array('cron')))) {
@@ -135,7 +135,7 @@ class UrbitInventoryfeedFeedModuleFrontController extends ModuleFrontController
 
         if (!$feedHelper->checkCache()) {
             $feedHelper->generateFeed($this->getFilteredProductCollection());
-        }
+          }
     }
 
     /**

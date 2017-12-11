@@ -26,9 +26,11 @@ $_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_d947d75ee194fef6827
 $_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_719fec04166d6fa75f89cd29ad61fa8c'] = 'Taxes';
 $_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_59716c97497eb9694541f7c3d37b1a4d'] = 'Pays';
 $_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_1cf05000491ab8186f65e56b67f3bab9'] = 'Sélectionner votre Pays dans le menu déroulant';
-$_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_07eb850be0b2e80f203888afb9612ba8'] = 'Champs produit-  Dimensions du produit';
+$_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_3b486710ee20ca1a0e76c16fd232c530'] = 'Champs Produit - Dimensions Produits';
 $_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_2c0d07cf6e08a59073c268d266abd59a'] = 'Champs Produit - Stock';
 $_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_46a4701149be1965268b7a0f83f57ad3'] = 'Champs Produit - Prix';
+$_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_dcbc788439abeb868c216eba4e2737a4'] = 'Ajoutez un stock minimal';
+$_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_5453a408af857077d328e44b757b52e8'] = 'Impossible de valider un champ vide';
 $_MODULE['<{urbitinventoryfeed}prestashop>urbitinventoryfeed_c888438d14855d7d96a2724ee9c306bd'] = 'Mise a jour des Paramètres  ';
 $_MODULE['<{urbitinventoryfeed}prestashop>configure_c7bc3fddddb62d5b656adc30cea77a55'] = 'Présentation';
 $_MODULE['<{urbitinventoryfeed}prestashop>configure_0cc39f9a63392ad0ed1f9a14931938b6'] = 'Configuration';
