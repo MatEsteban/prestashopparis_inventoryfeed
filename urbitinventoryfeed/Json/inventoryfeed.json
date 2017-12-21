@@ -1,0 +1,309 @@
+{
+    "$schema": "https:\/\/raw.githubusercontent.com\/urbitassociates\/urbit-merchant-feeds\/master\/schemas\/inventory\/2017-06-28-1\/inventory.json",
+    "content_language": "en-US",
+    "attribute_language": "en-US",
+    "content_type": "inventory",
+    "target_country": [
+        "en-US"
+    ],
+    "version": "2017-06-28-1",
+    "feed_format": {
+        "encoding": "UTF-8"
+    },
+    "schedule": {
+        "interval": "5MIN"
+    },
+    "entities": [
+        {
+            "id": "2-7",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 299
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2807,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "2-8",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2807,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "2-9",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2807,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "2-10",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2807,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "2-11",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2807,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "2-12",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2807,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "4-16",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 5303,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "4-17",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 5303,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "4-18",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 5303,
+                    "vat": 400,
+                    "type": "regular"
+                }
+            ]
+        },
+        {
+            "id": "7-34",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2358,
+                    "vat": 1500,
+                    "type": "regular"
+                },
+                {
+                    "currency": "USD",
+                    "value": 1886,
+                    "vat": 1500,
+                    "type": "sale"
+                }
+            ]
+        },
+        {
+            "id": "7-35",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2358,
+                    "vat": 1500,
+                    "type": "regular"
+                },
+                {
+                    "currency": "USD",
+                    "value": 1886,
+                    "vat": 1500,
+                    "type": "sale"
+                }
+            ]
+        },
+        {
+            "id": "7-36",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2358,
+                    "vat": 1500,
+                    "type": "regular"
+                },
+                {
+                    "currency": "USD",
+                    "value": 1886,
+                    "vat": 1500,
+                    "type": "sale"
+                }
+            ]
+        },
+        {
+            "id": "7-37",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2358,
+                    "vat": 1500,
+                    "type": "regular"
+                },
+                {
+                    "currency": "USD",
+                    "value": 1886,
+                    "vat": 1500,
+                    "type": "sale"
+                }
+            ]
+        },
+        {
+            "id": "7-38",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2358,
+                    "vat": 1500,
+                    "type": "regular"
+                },
+                {
+                    "currency": "USD",
+                    "value": 1886,
+                    "vat": 1500,
+                    "type": "sale"
+                }
+            ]
+        },
+        {
+            "id": "7-39",
+            "inventory": [
+                {
+                    "location": "1",
+                    "quantity": 300
+                }
+            ],
+            "prices": [
+                {
+                    "currency": "USD",
+                    "value": 2358,
+                    "vat": 1500,
+                    "type": "regular"
+                },
+                {
+                    "currency": "USD",
+                    "value": 1886,
+                    "vat": 1500,
+                    "type": "sale"
+                }
+            ]
+        }
+    ]
+}

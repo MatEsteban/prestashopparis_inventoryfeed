@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3408ac82-b92b-47f2-97b2-a5f1405cd442" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="urbitinventoryfeed.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/urbitinventoryfeed.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="706">
+              <caret line="591" column="0" lean-forward="false" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql/install.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1511261057491" expanded="true" signature="424:653" ph="CREATE TABLE... IF" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Feed.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/Feed.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4545">
+              <caret line="317" column="21" lean-forward="false" selection-start-line="317" selection-start-column="21" selection-end-line="317" selection-end-column="21" />
+              <folding>
+                <marker date="1512380113407" expanded="true" signature="8780:11080" ph="SELECT p.*, ${_DB_PREFIX_}product" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configure.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/templates/admin/configure.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feed.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/front/feed.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="54" column="9" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="54" selection-end-column="9" />
+              <folding>
+                <marker date="1512380113407" expanded="true" signature="840:5975" ph="{...}" />
+                <marker date="1512380113407" expanded="true" signature="969:1568" ph="{...}" />
+                <marker date="1512380113407" expanded="true" signature="3204:3218" ph="..." />
+                <marker date="1512380113407" expanded="true" signature="3204:3228" ph="..." />
+                <marker date="1512380113407" expanded="true" signature="3204:3282" ph="{...}" />
+                <marker date="1512380113407" expanded="true" signature="3291:3376" ph=" Write feed to file and return feed from this file ..." />
+                <marker date="1512380113407" expanded="true" signature="3416:3661" ph="{...}" />
+                <marker date="1512380113407" expanded="true" signature="3523:3610" ph="..." />
+                <marker date="1512380113407" expanded="true" signature="3670:3702" ph=" Write feed to file ..." />
+                <marker date="1512380113407" expanded="true" signature="3741:3942" ph="{...}" />
+                <marker date="1512380113407" expanded="true" signature="3848:3935" ph="..." />
+                <marker date="1512380113407" expanded="true" signature="3951:4148" ph=" Return product collection (without duplicates) filtered by standard filters from config (category, tag, minimal stock) OR result filter (if result filter != NULL) ..." />
+                <marker date="1512380113407" expanded="true" signature="4204:4774" ph="{...}" />
+                <marker date="1512380113407" expanded="true" signature="4783:4922" ph=" Helper function ..." />
+                <marker date="1512380113407" expanded="true" signature="5001:5296" ph="{...}" />
+                <marker date="1512380113407" expanded="true" signature="5067:5288" ph="..." />
+                <marker date="1512380113407" expanded="true" signature="5305:5518" ph=" Helper function ..." />
+                <marker date="1512380113407" expanded="true" signature="5645:5973" ph="{...}" />
+                <marker date="1512380113407" expanded="true" signature="5732:5965" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeedHelper.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Helper/FeedHelper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urbit_form.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/templates/admin/urbit_form.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="74" lean-forward="false" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UrbitHelperForm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Helper/UrbitHelperForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="multiselect.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/multiselect.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>price</find>
+      <find>TaxRa</find>
+      <find>getTags</find>
+      <find>helper</find>
+      <find>URBITINVENTORYFEED_FILTER_PRODUCT_ID</find>
+      <find>MINIMAL</find>
+      <find>consol</find>
+      <find>compa</find>
+      <find>assign</find>
+      <find>url</find>
+      <find>install</find>
+      <find>backOff</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Model/Feed/Fields/FieldAttribute.php" />
+        <option value="$PROJECT_DIR$/Model/Feed/Inventory.php" />
+        <option value="$PROJECT_DIR$/Model/Feed/Fields/FieldCalculated.php" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/config_fr.xml" />
+        <option value="$PROJECT_DIR$/views/js/multiselect.min.js" />
+        <option value="$PROJECT_DIR$/Helper/UrbitHelperForm.php" />
+        <option value="$PROJECT_DIR$/controllers/front/feed.php" />
+        <option value="$PROJECT_DIR$/Model/Feed.php" />
+        <option value="$PROJECT_DIR$/views/templates/admin/urbit_form.tpl" />
+        <option value="$PROJECT_DIR$/urbitinventoryfeed.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="27" />
+    <option name="width" value="1368" />
+    <option name="height" value="742" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urbitinventoryfeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urbitinventoryfeed" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3408ac82-b92b-47f2-97b2-a5f1405cd442" name="Default" comment="" />
+      <created>1511263381782</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1511263381782</updated>
+      <workItem from="1511263386535" duration="1344000" />
+      <workItem from="1511327278817" duration="581000" />
+      <workItem from="1511330415479" duration="84000" />
+      <workItem from="1511330528501" duration="1523000" />
+      <workItem from="1511335137878" duration="112000" />
+      <workItem from="1511764858190" duration="2756000" />
+      <workItem from="1511937247468" duration="5901000" />
+      <workItem from="1511970527634" duration="216000" />
+      <workItem from="1511974667106" duration="1416000" />
+      <workItem from="1512017031952" duration="343000" />
+      <workItem from="1512018351329" duration="956000" />
+      <workItem from="1512022515590" duration="856000" />
+      <workItem from="1512024282044" duration="837000" />
+      <workItem from="1512027321998" duration="598000" />
+      <workItem from="1512036607442" duration="12000" />
+      <workItem from="1512103730436" duration="754000" />
+      <workItem from="1512212531206" duration="330000" />
+      <workItem from="1513443721288" duration="44000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="18663000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16363636" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Model/Feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3165">
+          <caret line="225" column="17" lean-forward="true" selection-start-line="225" selection-start-column="17" selection-end-line="225" selection-end-column="17" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="8780:11080" ph="SELECT p.*, ${_DB_PREFIX_}product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="72" column="56" lean-forward="true" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="840:5975" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="969:1568" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3204:3218" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3228" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3282" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3291:3376" ph=" Write feed to file and return feed from this file ..." />
+            <marker date="1512380113407" expanded="true" signature="3416:3661" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3523:3610" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3670:3702" ph=" Write feed to file ..." />
+            <marker date="1512380113407" expanded="true" signature="3741:3942" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3848:3935" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3951:4148" ph=" Return product collection (without duplicates) filtered by standard filters from config (category, tag, minimal stock) OR result filter (if result filter != NULL) ..." />
+            <marker date="1512380113407" expanded="true" signature="4204:4774" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="4783:4922" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5001:5296" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5067:5288" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="5305:5518" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5645:5973" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5732:5965" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Inventory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="242" column="51" lean-forward="false" selection-start-line="242" selection-start-column="51" selection-end-line="242" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldCalculated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbitinventoryfeed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_fr.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldAttribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="81" column="55" lean-forward="false" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="8780:11080" ph="SELECT p.*, ${_DB_PREFIX_}product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="840:5975" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="969:1568" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3204:3218" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3228" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3282" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3291:3376" ph=" Write feed to file and return feed from this file ..." />
+            <marker date="1512380113407" expanded="true" signature="3416:3661" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3523:3610" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3670:3702" ph=" Write feed to file ..." />
+            <marker date="1512380113407" expanded="true" signature="3741:3942" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3848:3935" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3951:4148" ph=" Return product collection (without duplicates) filtered by standard filters from config (category, tag, minimal stock) OR result filter (if result filter != NULL) ..." />
+            <marker date="1512380113407" expanded="true" signature="4204:4774" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="4783:4922" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5001:5296" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5067:5288" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="5305:5518" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5645:5973" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5732:5965" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Inventory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="242" column="51" lean-forward="false" selection-start-line="242" selection-start-column="51" selection-end-line="242" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbitinventoryfeed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_fr.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldCalculated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldAttribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="81" column="55" lean-forward="false" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="8780:11080" ph="SELECT p.*, ${_DB_PREFIX_}product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="840:5975" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="969:1568" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3204:3218" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3228" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3282" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3291:3376" ph=" Write feed to file and return feed from this file ..." />
+            <marker date="1512380113407" expanded="true" signature="3416:3661" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3523:3610" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3670:3702" ph=" Write feed to file ..." />
+            <marker date="1512380113407" expanded="true" signature="3741:3942" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3848:3935" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3951:4148" ph=" Return product collection (without duplicates) filtered by standard filters from config (category, tag, minimal stock) OR result filter (if result filter != NULL) ..." />
+            <marker date="1512380113407" expanded="true" signature="4204:4774" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="4783:4922" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5001:5296" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5067:5288" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="5305:5518" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5645:5973" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5732:5965" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Inventory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="242" column="51" lean-forward="false" selection-start-line="242" selection-start-column="51" selection-end-line="242" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbitinventoryfeed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_fr.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldCalculated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldAttribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="81" column="55" lean-forward="false" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="8780:11080" ph="SELECT p.*, ${_DB_PREFIX_}product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="840:5975" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="969:1568" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3204:3218" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3228" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3282" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3291:3376" ph=" Write feed to file and return feed from this file ..." />
+            <marker date="1512380113407" expanded="true" signature="3416:3661" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3523:3610" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3670:3702" ph=" Write feed to file ..." />
+            <marker date="1512380113407" expanded="true" signature="3741:3942" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3848:3935" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3951:4148" ph=" Return product collection (without duplicates) filtered by standard filters from config (category, tag, minimal stock) OR result filter (if result filter != NULL) ..." />
+            <marker date="1512380113407" expanded="true" signature="4204:4774" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="4783:4922" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5001:5296" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5067:5288" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="5305:5518" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5645:5973" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5732:5965" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Inventory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="242" column="51" lean-forward="false" selection-start-line="242" selection-start-column="51" selection-end-line="242" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldCalculated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="121" column="50" lean-forward="false" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldAttribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="81" column="55" lean-forward="false" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="8780:11080" ph="SELECT p.*, ${_DB_PREFIX_}product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="840:5975" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="969:1568" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3204:3218" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3228" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3282" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3291:3376" ph=" Write feed to file and return feed from this file ..." />
+            <marker date="1512380113407" expanded="true" signature="3416:3661" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3523:3610" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3670:3702" ph=" Write feed to file ..." />
+            <marker date="1512380113407" expanded="true" signature="3741:3942" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3848:3935" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3951:4148" ph=" Return product collection (without duplicates) filtered by standard filters from config (category, tag, minimal stock) OR result filter (if result filter != NULL) ..." />
+            <marker date="1512380113407" expanded="true" signature="4204:4774" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="4783:4922" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5001:5296" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5067:5288" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="5305:5518" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5645:5973" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5732:5965" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Inventory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="242" column="51" lean-forward="false" selection-start-line="242" selection-start-column="51" selection-end-line="242" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldCalculated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="121" column="50" lean-forward="true" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldAttribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="840:5975" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="969:1568" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3204:3218" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3228" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3282" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3291:3376" ph=" Write feed to file and return feed from this file ..." />
+            <marker date="1512380113407" expanded="true" signature="3416:3661" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3523:3610" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3670:3702" ph=" Write feed to file ..." />
+            <marker date="1512380113407" expanded="true" signature="3741:3942" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3848:3935" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3951:4148" ph=" Return product collection (without duplicates) filtered by standard filters from config (category, tag, minimal stock) OR result filter (if result filter != NULL) ..." />
+            <marker date="1512380113407" expanded="true" signature="4204:4774" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="4783:4922" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5001:5296" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5067:5288" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="5305:5518" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5645:5973" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5732:5965" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Inventory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="81" column="55" lean-forward="true" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="8780:11080" ph="SELECT p.*, ${_DB_PREFIX_}product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldAttribute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Inventory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="242" column="51" lean-forward="false" selection-start-line="242" selection-start-column="51" selection-end-line="242" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed/Fields/FieldCalculated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_fr.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/multiselect.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/admin/configure.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4545">
+          <caret line="317" column="21" lean-forward="false" selection-start-line="317" selection-start-column="21" selection-end-line="317" selection-end-column="21" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="8780:11080" ph="SELECT p.*, ${_DB_PREFIX_}product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Helper/FeedHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Helper/UrbitHelperForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="54" column="9" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="54" selection-end-column="9" />
+          <folding>
+            <marker date="1512380113407" expanded="true" signature="840:5975" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="969:1568" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3204:3218" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3228" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3204:3282" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3291:3376" ph=" Write feed to file and return feed from this file ..." />
+            <marker date="1512380113407" expanded="true" signature="3416:3661" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3523:3610" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3670:3702" ph=" Write feed to file ..." />
+            <marker date="1512380113407" expanded="true" signature="3741:3942" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="3848:3935" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="3951:4148" ph=" Return product collection (without duplicates) filtered by standard filters from config (category, tag, minimal stock) OR result filter (if result filter != NULL) ..." />
+            <marker date="1512380113407" expanded="true" signature="4204:4774" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="4783:4922" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5001:5296" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5067:5288" ph="..." />
+            <marker date="1512380113407" expanded="true" signature="5305:5518" ph=" Helper function ..." />
+            <marker date="1512380113407" expanded="true" signature="5645:5973" ph="{...}" />
+            <marker date="1512380113407" expanded="true" signature="5732:5965" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates/admin/urbit_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="74" lean-forward="false" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/install.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1511261057491" expanded="true" signature="424:653" ph="CREATE TABLE... IF" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbitinventoryfeed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="591" column="0" lean-forward="false" selection-start-line="591" selection-start-column="0" selection-end-line="591" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

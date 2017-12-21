@@ -46,7 +46,7 @@ class Urbitinventoryfeed extends Module
     {
         $this->name = 'urbitinventoryfeed';
         $this->tab = 'administration';
-        $this->version = '1.0.3';
+        $this->version = '1.0.3.5';
         $this->author = 'Urbit';
         $this->need_instance = 1;
 
@@ -110,7 +110,7 @@ class Urbitinventoryfeed extends Module
             $output = $this->postProcess();
             $this->context->smarty->assign('active', 'account');
         }
-
+      
         $this->context->smarty->assign('module_dir', $this->_path);
 
         //link to controller (for ajax call)
@@ -147,10 +147,28 @@ class Urbitinventoryfeed extends Module
         $helper->token = Tools::getAdminTokenLite('AdminModules');
 
         $valueArray = $this->getConfigFormValues();
-        $valueArray['URBITINVENTORYFEED_TAGS_IDS[]'] = explode(',', Configuration::get('URBITINVENTORYFEED_TAGS_IDS', null));
-        $valueArray['URBITINVENTORYFEED_FILTER_CATEGORIES[]'] = explode(',', Configuration::get('URBITINVENTORYFEED_FILTER_CATEGORIES', null));
-        $valueArray['URBITINVENTORYFEED_PRODUCT_ID_FILTER[]'] = explode(',', Configuration::get('URBITINVENTORYFEED_PRODUCT_ID_FILTER', null));
+        $valueArray['URBITINVENTORYFEED_TAGS_IDS[]'] = explode(
+            ',',
+            $this->getConfigValue('URBITINVENTORYFEED_TAGS_IDS')
+        );
+        $valueArray['URBITINVENTORYFEED_FILTER_CATEGORIES[]'] = explode(
+            ',',
+            $this->getConfigValue('URBITINVENTORYFEED_FILTER_CATEGORIES')
+        );
+        $valueArray['URBITINVENTORYFEED_PRODUCT_ID_FILTER[]'] = explode(
+            ',',
+            $this->getConfigValue('URBITINVENTORYFEED_PRODUCT_ID_FILTER')
+        );
 
+        $tokenInConfig = $this->getConfigValue('URBITINVENTORYFEED_FEED_TOKEN');
+
+        if (!$tokenInConfig) {
+            $newToken = $this->generateFeedToken();
+            $valueArray['URBITINVENTORYFEED_FEED_TOKEN'] = $newToken;
+            $this->updateConfigValue('URBITINVENTORYFEED_FEED_TOKEN', $newToken);
+        } else {
+            $valueArray['URBITINVENTORYFEED_FEED_TOKEN'] = $tokenInConfig;
+        }
 
         $helper->tpl_vars = array(
             'fields_value' => $valueArray,
@@ -346,6 +364,18 @@ class Urbitinventoryfeed extends Module
         return $optionsForTaxesSelect;
     }
 
+    protected function generateFeedToken()
+    {
+        return version_compare(_PS_VERSION_, "1.7", "<") ?
+            Tools::encrypt(mt_rand(0, PHP_INT_MAX - 1) . Tools::getToken(false)):
+            Tools::hash(mt_rand(0, PHP_INT_MAX - 1) . Tools::getToken(false));
+    }
+
+    protected function getFeedTokenFromConfig()
+    {
+        return $this->getConfigValue('URBITINVENTORYFEED_FEED_TOKEN');
+    }
+
     /**
      * @return array
      */
@@ -357,7 +387,7 @@ class Urbitinventoryfeed extends Module
         $optionsForTaxes = $this->getCountriesOptions(true);
         $optionsForProductFilter = $this->getProductsOptions(true);
 
-        $fields_form = array();
+        $fields_form = [];
 
         //Feed Cache
         $fields_form[0]['form'] = array(
@@ -384,8 +414,27 @@ class Urbitinventoryfeed extends Module
             ),
         );
 
-        // Product Filters
         $fields_form[1]['form'] = array(
+            'legend' => array(
+                'title' => $this->l('Feed token'),
+                'icon'  => 'icon-cogs',
+            ),
+            'input'  => array(
+                array(
+                    'type'    => 'urbit_token',
+                    'label'   => $this->l('Token'),
+                    'name'    => 'URBITINVENTORYFEED_FEED_TOKEN',
+                    'token'  => $this->getFeedTokenFromConfig(),
+                    'class'   => 'fixed-width-xxl',
+                ),
+            ),
+            'submit' => array(
+                'title' => $this->l('Save'),
+            ),
+        );
+
+        // Product Filters
+        $fields_form[2]['form'] = array(
             'legend' => array(
                 'title' => $this->l('Inventory Filter'),
                 'icon'  => 'icon-cogs',
@@ -448,7 +497,7 @@ If there is no selected filter parameter (categories or tags or the number of pr
         );
 
         //Taxes
-        $fields_form[2]['form'] = array(
+        $fields_form[3]['form'] = array(
             'legend' => array(
                 'title' => $this->l('Taxes'),
                 'icon'  => 'icon-cogs',
@@ -474,7 +523,7 @@ If there is no selected filter parameter (categories or tags or the number of pr
         );
 
         //Inventory Dimentions
-        $fields_form[3]['form'] = array(
+        $fields_form[4]['form'] = array(
             'legend' => array(
                 'title' => $this->l('Product Fields - Product Dimensions'),
                 'icon'  => 'icon-cogs',
@@ -486,7 +535,7 @@ If there is no selected filter parameter (categories or tags or the number of pr
         );
 
         //Inventory
-        $fields_form[4]['form'] = array(
+        $fields_form[5]['form'] = array(
             'legend' => array(
                 'title' => $this->l('Product Fields - Inventory'),
                 'icon'  => 'icon-cogs',
@@ -498,7 +547,7 @@ If there is no selected filter parameter (categories or tags or the number of pr
         );
 
         //Prices
-        $fields_form[5]['form'] = array(
+        $fields_form[6]['form'] = array(
             'legend' => array(
                 'title' => $this->l('Product Fields - Prices'),
                 'icon'  => 'icon-cogs',
@@ -509,7 +558,46 @@ If there is no selected filter parameter (categories or tags or the number of pr
             ),
         );
 
+        $fields_form[7]['form'] = array(
+            'legend' => array(
+                'title' => $this->l('Custom Inventory List'),
+                'icon'  => 'icon-cogs',
+            ),
+            'input'  => $this->fields['factory']->getInventoryInputs(),
+            'submit' => array(
+                'title' => $this->l('Save'),
+            ),
+        );
+
         return $fields_form;
+    }
+
+    /**
+     * Get value from ps_configuration for this key
+     * If multistore enable => get config value only for current store
+     * @param $key
+     * @return string
+     */
+    protected function getConfigValue($key)
+    {
+        return (version_compare(_PS_VERSION_, '1.5', '>') && Shop::isFeatureActive()) ?
+            Configuration::get($key, null, null, $this->context->shop->id) :
+            Configuration::get($key, null);
+    }
+
+    /**
+     * Update ps_configuration value for this key
+     * If multistore enable => update config value only for current store
+     * @param $key
+     * @param $value
+     */
+    protected function updateConfigValue($key, $value)
+    {
+        if (version_compare(_PS_VERSION_, '1.5', '>') && Shop::isFeatureActive()) {
+            Configuration::updateValue($key, $value, false, null, $this->context->shop->id);
+        } else {
+            Configuration::updateValue($key, $value);
+        }
     }
 
     /**
@@ -519,12 +607,13 @@ If there is no selected filter parameter (categories or tags or the number of pr
     {
         return array_merge(
             array(
-                'URBITINVENTORYFEED_CACHE_DURATION'    => Configuration::get('URBITINVENTORYFEED_CACHE_DURATION', null),
-                'URBITINVENTORYFEED_FILTER_CATEGORIES' => explode(',', Configuration::get('URBITINVENTORYFEED_FILTER_CATEGORIES', null)),
-                'URBITINVENTORYFEED_TAGS_IDS'          => explode(',', Configuration::get('URBITINVENTORYFEED_TAGS_IDS', null)),
-                'URBITINVENTORYFEED_TAX_COUNTRY'       => Configuration::get('URBITINVENTORYFEED_TAX_COUNTRY', null),
-                'URBITINVENTORYFEED_MINIMAL_STOCK'     => Configuration::get('URBITINVENTORYFEED_MINIMAL_STOCK', null),
-                'URBITINVENTORYFEED_PRODUCT_ID_FILTER' => Configuration::get('URBITINVENTORYFEED_PRODUCT_ID_FILTER', null),
+                'URBITINVENTORYFEED_CACHE_DURATION'    => $this->getConfigValue('URBITINVENTORYFEED_CACHE_DURATION'),
+                'URBITINVENTORYFEED_FILTER_CATEGORIES' => explode(',', $this->getConfigValue('URBITINVENTORYFEED_FILTER_CATEGORIES')),
+                'URBITINVENTORYFEED_TAGS_IDS'          => explode(',', $this->getConfigValue('URBITINVENTORYFEED_TAGS_IDS')),
+                'URBITINVENTORYFEED_TAX_COUNTRY'       => $this->getConfigValue('URBITINVENTORYFEED_TAX_COUNTRY'),
+                'URBITINVENTORYFEED_MINIMAL_STOCK'     => $this->getConfigValue('URBITINVENTORYFEED_MINIMAL_STOCK') ? : 0,
+                'URBITINVENTORYFEED_PRODUCT_ID_FILTER' => $this->getConfigValue('URBITINVENTORYFEED_PRODUCT_ID_FILTER'),
+                'URBITINVENTORYFEED_FEED_TOKEN'        => $this->getConfigValue('URBITINVENTORYFEED_FEED_TOKEN'),
             ),
             $this->fields['factory']->getInputsConfig(),
             $this->fields['factory']->getPriceInputsConfig(),
@@ -541,13 +630,10 @@ If there is no selected filter parameter (categories or tags or the number of pr
 
         foreach (array_keys($form_values) as $key) {
             if (in_array($key, array('URBITINVENTORYFEED_TAGS_IDS', 'URBITINVENTORYFEED_FILTER_CATEGORIES', 'URBITINVENTORYFEED_PRODUCT_ID_FILTER'))) {
-                if ($value = Tools::getValue($key)) {
-                    Configuration::updateValue($key, implode(',', $value));
-                } else {
-                    Configuration::updateValue($key, null);
-                }
+                $value = Tools::getValue($key) ?: null;
+                $this->updateConfigValue($key, $value ? implode(',', $value) : 'none');
             } else {
-                Configuration::updateValue($key, Tools::getValue($key));
+                $this->updateConfigValue($key, Tools::getValue($key));
             }
         }
         if (!(bool)preg_match('/^[0-9]{0,13}$/', Tools::getValue('URBITINVENTORYFEED_MINIMAL_STOCK')))  {
