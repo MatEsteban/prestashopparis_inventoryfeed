@@ -180,7 +180,7 @@ class UrbitInventoryfeedFeed
      */
     public static function getCategoryFilters()
     {
-        $filterValue = Configuration::get('URBITINVENTORYFEED_FILTER_CATEGORIES', null);
+        $filterValue = self::getConfigValue('URBITINVENTORYFEED_FILTER_CATEGORIES');
 
         return $filterValue ? explode(',', $filterValue) : null;
     }
@@ -191,7 +191,7 @@ class UrbitInventoryfeedFeed
      */
     public static function getTagsFilters()
     {
-        $filterValue = Configuration::get('URBITINVENTORYFEED_TAGS_IDS', null);
+        $filterValue = self::getConfigValue('URBITINVENTORYFEED_TAGS_IDS');
 
         return $filterValue ? explode(',', $filterValue) : null;
     }
@@ -202,7 +202,7 @@ class UrbitInventoryfeedFeed
      */
     public static function getProductFilters()
     {
-        $filterValue = Configuration::get('URBITINVENTORYFEED_PRODUCT_ID_FILTER', null);
+        $filterValue = self::getConfigValue('URBITINVENTORYFEED_PRODUCT_ID_FILTER');
 
         return $filterValue ? explode(',', $filterValue) : null;
     }
@@ -212,7 +212,7 @@ class UrbitInventoryfeedFeed
      */
     public static function getMinimalStockFilter()
     {
-        $filterValue = Configuration::get('URBITINVENTORYFEED_MINIMAL_STOCK', null);
+        $filterValue = self::getConfigValue('URBITINVENTORYFEED_MINIMAL_STOCK');
 
         return $filterValue ? : null;
     }
@@ -231,6 +231,8 @@ class UrbitInventoryfeedFeed
      * @param bool $only_active
      * @param Context|null $context
      * @return array|false|mysqli_result|null|PDOStatement|resource
+     * @throws PrestaShopDatabaseException
+     * @throws PrestaShopException
      * @internal param bool $product_id
      */
     public static function getFilteredProducts(
@@ -351,5 +353,18 @@ class UrbitInventoryfeedFeed
     public function getFeedVersion()
     {
         return static::FEED_VERSION;
+    }
+
+    /**
+     * Get value from ps_configuration for this key
+     * If multistore enable => get config value only for current store
+     * @param $key
+     * @return string
+     */
+    protected static function getConfigValue($key)
+    {
+        return (version_compare(_PS_VERSION_, '1.5', '>') && Shop::isFeatureActive()) ?
+            Configuration::get($key, null, null, Context::getContext()->shop->id) :
+            Configuration::get($key, null);
     }
 }
