@@ -46,7 +46,7 @@ class Urbitinventoryfeed extends Module
     {
         $this->name = 'urbitinventoryfeed';
         $this->tab = 'administration';
-        $this->version = '1.0.3.5';
+        $this->version = '1.0.3';
         $this->author = 'Urbit';
         $this->need_instance = 1;
 
@@ -110,7 +110,7 @@ class Urbitinventoryfeed extends Module
             $output = $this->postProcess();
             $this->context->smarty->assign('active', 'account');
         }
-      
+
         $this->context->smarty->assign('module_dir', $this->_path);
 
         //link to controller (for ajax call)
@@ -387,7 +387,7 @@ class Urbitinventoryfeed extends Module
         $optionsForTaxes = $this->getCountriesOptions(true);
         $optionsForProductFilter = $this->getProductsOptions(true);
 
-        $fields_form = [];
+        $fields_form = array();
 
         //Feed Cache
         $fields_form[0]['form'] = array(
@@ -636,13 +636,14 @@ If there is no selected filter parameter (categories or tags or the number of pr
                 $this->updateConfigValue($key, Tools::getValue($key));
             }
         }
-        if (!(bool)preg_match('/^[0-9]{0,13}$/', Tools::getValue('URBITINVENTORYFEED_MINIMAL_STOCK')))  {
+
+        if (!(bool)preg_match('/^[0-9]{0,13}$/', Tools::getValue('URBITINVENTORYFEED_MINIMAL_STOCK'))) {
             $this->context->controller->errors[] = $this->l('Add a Minimal stock');
         }
 
         if (Tools::getValue('URBITINVENTORYFEED_MINIMAL_STOCK') == null) {
             $this->context->controller->errors[] = $this->l('Unable to validate an empty field');
-          }
+        }
 
         if (empty($this->context->controller->errors)) {
                 return $this->displayConfirmation($this->l('Settings updated'));
