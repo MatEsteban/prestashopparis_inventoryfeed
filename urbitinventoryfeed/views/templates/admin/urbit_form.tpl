@@ -116,11 +116,19 @@
                         getOptionsByAjax();
                     }
                 });
-
-
             }
 
         </script>
+    {elseif $input.type == 'urbit_token'}
+        <div class="form-group">
+            <input type="text" name="URBITINVENTORYFEED_FEED_TOKEN" class="fixed-width-xxl" id="urbit-feed-token" value="{$fields_value[$input.name]}">
+        </div>
+        <div class="form-group">
+            <button type="submit" value="1" name="submitInventoryFeedModule" class="btn btn-default">Save Token</button>
+        </div>
+        <div class="form-group">
+            <a href="/index.php?fc=module&module=urbitinventoryfeed&controller=feed&token={$input.token}" id="generate-token-button" class="btn btn-default">Get the feed</a>
+        </div>
     {else}
         {$smarty.block.parent}
     {/if}
